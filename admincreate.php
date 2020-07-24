@@ -14,7 +14,7 @@
 <body>
 
 <h1>ADMIN DASHBOARD  <span><a href="logout.php">LOG OUT</a></span></h1>
-<a href="adminusers.php"><b>Superadmin</b> Edit Users</a><br>
+
 <a href="admincreate.php">Create Animals</a><br>
 <a href="admin.php">Edit Animals</a>
 <br>

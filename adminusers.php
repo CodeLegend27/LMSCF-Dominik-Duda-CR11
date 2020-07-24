@@ -1,4 +1,8 @@
-<?php include "dbconnect.php";?>
+<?php include "dbconnect.php";
+
+
+?>
+
 
 <!DOCTYPE html>
 <html>
@@ -11,10 +15,8 @@
 </head>
 <body>
     
-<h1>ADMIN DASHBOARD  <span><a href="logout.php">LOG OUT</a></span></h1>
-<a href="adminusers.php"><b>Superadmin</b> Edit Users</a><br>
-<a href="admincreate.php">Create Animals</a><br>
-<a href="admin.php">Edit Animals</a>
+<h1>SUPER ADMIN DASHBOARD - EDIT USERS <span><a href="logout.php">LOG OUT</a></span></h1>
+
 <br>
 <div class="container">
   <table class="table table-striped">
@@ -23,7 +25,7 @@
       <th scope="col">USER ID</th>
       <th scope="col">NAME</th>
       <th scope="col">EMAIL</th>
-     
+      <th scope="col">STATUS</th>
       <th scope="col">Delete</th>
 
     </tr>
@@ -35,7 +37,7 @@
   <?php 
   
 
-  $sql = "SELECT * FROM users WHERE status = 'user'";
+  $sql = "SELECT * FROM users WHERE status='admin' OR status='user' ";
   $result = mysqli_query($conn, $sql);
 
   
@@ -49,8 +51,8 @@
       <th scope="row">'.$row["userId"].'</th>
       <th scope="row">'.$row["userName"].'</th>
       <th scope="row">'.$row["userEmail"].'</th>
+      <th scope="row">'.$row["status"].'</th>
       
-
             
       </th>
       <th scope="row"> <form action ="deleteuser.php" method="post">

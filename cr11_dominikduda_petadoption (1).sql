@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 24. Jul 2020 um 14:14
+-- Erstellungszeit: 24. Jul 2020 um 14:26
 -- Server-Version: 10.4.13-MariaDB
 -- PHP-Version: 7.4.7
 
@@ -268,7 +268,7 @@ CREATE TABLE `users` (
   `userName` varchar(30) NOT NULL,
   `userEmail` varchar(60) NOT NULL,
   `userPass` varchar(255) NOT NULL,
-  `status` enum('user','admin') NOT NULL DEFAULT 'user'
+  `status` enum('user','admin','superadmin') NOT NULL DEFAULT 'user'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -279,10 +279,9 @@ INSERT INTO `users` (`userId`, `userName`, `userEmail`, `userPass`, `status`) VA
 (1, 'MASCHA BÄR', 'a@a.com', 'ed02457b5c41d964dbd2f2a609d63fe1bb7528dbe55e1abf5b52c249cd735797', 'user'),
 (2, 'DOMINIK', 'b@b.com', '4625fd63b0e96fc0d656ae7381605e48d4a0f63a319fc743adf22688613883c7', 'admin'),
 (5, 'TESTUSER1', 'TEST@TEST.COM', 'TEST', 'user'),
-(8, 'TESTUSER1', 'TtEST@TEST.COM', 'TEST', 'user'),
 (15, 'hhh', 'h@h.com', '89102c5116c37daa55d86342ce2c47d35b1bc2ed407509732d940ea2901befbc', 'user'),
 (16, 'ttt', 't@t.com', 'c7854c301113d781c6f3cc763390da65f6459ee30cc52359842f5901649abbee', 'user'),
-(17, 'peter', 'p@p.com', '891e12e156d8c6609c6d5f3e04b2fc8da6d9ff3d7e9f906314c0909da69637eb', 'user');
+(17, 'peter', 'p@p.com', '891e12e156d8c6609c6d5f3e04b2fc8da6d9ff3d7e9f906314c0909da69637eb', 'superadmin');
 
 --
 -- Indizes der exportierten Tabellen

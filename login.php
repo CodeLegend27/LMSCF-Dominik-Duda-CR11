@@ -45,7 +45,20 @@ if( isset($_POST['btn-login']) ) {
       $_SESSION["admin"] = $row["userId"];
       header("Location: admin.php");
 
-    }else {
+    }else 
+    
+    
+    if($row["status"] == 'superadmin'){
+      $_SESSION["admin"] = $row["userId"];
+      header("Location: adminusers.php");
+
+    }
+    
+    
+    
+    
+    
+    else {
       $_SESSION['user'] = $row['userId'];
       header("Location: home.php");    }
    
